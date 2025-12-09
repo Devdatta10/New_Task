@@ -255,14 +255,14 @@
     btn.onclick = () => nextPageWrapper(i + 2);
 
     wrapper.appendChild(message);
-    wrapper.appendChild(container); // Foto di dalam wrapper
+    wrapper.appendChild(container); 
     wrapper.appendChild(btn);
 
     const shape = document.createElement('div');
     shape.className = 'shape';
     
     page.appendChild(shape);
-    page.appendChild(wrapper); // Wrapper sekarang anak dari page
+    page.appendChild(wrapper); 
     document.body.appendChild(page);
   });
 
@@ -274,7 +274,7 @@
   wrapper6.className = 'content-wrapper';
 
   const thx = document.createElement('h2');
-  thx.id = 'thx'; // ID untuk styling
+  thx.id = 'thx'; 
   thx.innerText = 'Thank you so much for accepting me and staying with me all this time. If we’re really meant to be, we can keep going together as a couple. If we’re not, at least I’m grateful that I got to be with you and be loved by you all this time ❤. I hope that whatever happens in the future, you’ll always be happy living your life, all your goals will come true — I’ll always support you no matter what. So… don’t leave me, okay? So there’s always someone to be with you, hehe😚💗😘';
   thx.style.color = '#d63384';
   thx.style.marginBottom = '20px';
@@ -317,24 +317,23 @@
       if (nextEl) {
         nextEl.classList.remove('hidden');
         nextEl.classList.add('visible');
-        // Scroll ke atas saat pindah halaman di mobile
+        
         nextEl.scrollTop = 0;
       }
       currentPage = n;
   }
 
-  // Ganti onclick pertama ke fungsi wrapper ini
+  
   function nextPage(pageNumber) {
     const targetPage = pageNumber === 5 ? 6 : pageNumber + 1;
     nextPageWrapper(targetPage);
   }
-   // Mengganti fungsi `nextPage` asli menjadi lebih baik
+   
    document.querySelector('#page1 .btn').onclick = () => nextPage(1);
    document.querySelectorAll('.page .btn').forEach(btn => {
-        // Ini akan menimpa onclick sebelumnya, jadi kita harus lebih spesifik
+
    });
 
-   // Setup tombol secara eksplisit
    function setupButtons() {
         document.querySelector('#page1 .btn').onclick = () => nextPageWrapper(2);
         for(let i = 2; i <= 5; i++) {
@@ -378,13 +377,12 @@
     const bgMusic = document.getElementById('bg-music');
     bgMusic.volume = 0.5;
     
-    // Hapus autoplay, biarkan user yang memulai musik
     bgMusic.removeAttribute('autoplay');
     
-    // Ganti logika tombol
     setupButtons();
   });
 
 </script>
 </body>
+
 </html>
